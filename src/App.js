@@ -1,11 +1,23 @@
 import React from 'react';
 
 
-class App extends React.component {
+import {Cards, Charts, CountryPicker} from './components';
+import styles from './App.module.css';
+import { fetchData } from './api'
+
+class App extends React.Component {
+    async componentDidMount() {
+        const data = await fetchData();
+        
+        console.log(data);
+    }
+
     render() {
         return (
-            <div>
-                <h1>App</h1>
+            <div className={styles.container}>
+                <Cards />
+                <CountryPicker />
+                <Charts />
             </div>
         )
     }
