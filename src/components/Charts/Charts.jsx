@@ -46,7 +46,15 @@ const Charts = ({ data, country}) => {
     const barChart = (
       data.confirmed
         ? (
-          <Bar />
+          <Bar 
+          data={{
+
+          }}
+          options={{
+            legend: { display: false },
+            title: { display: true, text: `Current State in ${country}` },
+          }}
+          />
         ) : null
     );
 
